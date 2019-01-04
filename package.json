@@ -1,0 +1,31 @@
+{
+  "name": "svg-path-polyfill",
+  "version": "1.0.0",
+  "description": "SVGPathElement polyfills that are missing on older Web-browsers like IE11.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "npm run webpack",
+    "webpack": "webpack"
+  },
+  "keywords": [
+    "SVGPathElement",
+    "svg",
+    "polyfill",
+    "getTotalLength",
+    "getPointAtLength",
+    "getTangentAtLength",
+    "path"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThePedestrian/svg-path-polyfill"
+  },
+  "author": "Uffaz Nathaniel",
+  "license": "MIT",
+  "devDependencies": {
+    "svg-path-properties": "^0.4.7",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0"
+  }
+}
