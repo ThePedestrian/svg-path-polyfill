@@ -125,7 +125,7 @@ function isGetTotalLengthSupported() {
 }
 
 // Means it is an older browser
-//if (!isGetTotalLengthSupported()) {
+if (!isGetTotalLengthSupported()) {
 var svgProto = SVGPathElement.prototype;
 
 svgProto.getTotalLength = svgProto.getTotalLength || function() {
@@ -160,7 +160,7 @@ svgProto.getTangentAtLength = svgProto.getTangentAtLength || function(fractionLe
     }
     return {x: 0, y: 0};
 };
-//}
+}
 
 /***/ }),
 /* 1 */

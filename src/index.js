@@ -27,39 +27,39 @@ function isGetTotalLengthSupported() {
 }
 
 // Means it is an older browser
-//if (!isGetTotalLengthSupported()) {
-var svgProto = SVGPathElement.prototype;
+if (!isGetTotalLengthSupported()) {
+    var svgProto = SVGPathElement.prototype;
 
-svgProto.getTotalLength = svgProto.getTotalLength || function() {
-    var d = this.getAttribute('d');
-    if (d) {
-        try {
-            var p = path.svgPathProperties(d);
-            return p.getTotalLength();
-        } catch (err) {}
-    }
-    return 0;
-};
+    svgProto.getTotalLength = svgProto.getTotalLength || function() {
+        var d = this.getAttribute('d');
+        if (d) {
+            try {
+                var p = path.svgPathProperties(d);
+                return p.getTotalLength();
+            } catch (err) {}
+        }
+        return 0;
+    };
 
-svgProto.getPointAtLength = svgProto.getPointAtLength || function(fractionLength) {
-    var d = this.getAttribute('d');
-    if (d) {
-        try {
-            var p = path.svgPathProperties(d);
-            return p.getPointAtLength(fractionLength);
-        } catch (err) {}
-    }
-    return {x: 0, y: 0};
-};
+    svgProto.getPointAtLength = svgProto.getPointAtLength || function(fractionLength) {
+        var d = this.getAttribute('d');
+        if (d) {
+            try {
+                var p = path.svgPathProperties(d);
+                return p.getPointAtLength(fractionLength);
+            } catch (err) {}
+        }
+        return {x: 0, y: 0};
+    };
 
-svgProto.getTangentAtLength = svgProto.getTangentAtLength || function(fractionLength) {
-    var d = this.getAttribute('d');
-    if (d) {
-        try {
-            var p = path.svgPathProperties(d);
-            return p.getTangentAtLength(fractionLength);
-        } catch (err) {}
-    }
-    return {x: 0, y: 0};
-};
-//}
+    svgProto.getTangentAtLength = svgProto.getTangentAtLength || function(fractionLength) {
+        var d = this.getAttribute('d');
+        if (d) {
+            try {
+                var p = path.svgPathProperties(d);
+                return p.getTangentAtLength(fractionLength);
+            } catch (err) {}
+        }
+        return {x: 0, y: 0};
+    };
+}
