@@ -30,7 +30,7 @@ function isGetTotalLengthSupported() {
 if (!isGetTotalLengthSupported()) {
     var svgProto = SVGPathElement.prototype;
 
-    svgProto.getTotalLength = svgProto.getTotalLength || function() {
+    svgProto.getTotalLength = function() {
         var d = this.getAttribute('d');
         if (d) {
             try {
@@ -41,7 +41,7 @@ if (!isGetTotalLengthSupported()) {
         return 0;
     };
 
-    svgProto.getPointAtLength = svgProto.getPointAtLength || function(fractionLength) {
+    svgProto.getPointAtLength = function(fractionLength) {
         var d = this.getAttribute('d');
         if (d) {
             try {
@@ -52,7 +52,7 @@ if (!isGetTotalLengthSupported()) {
         return {x: 0, y: 0};
     };
 
-    svgProto.getTangentAtLength = svgProto.getTangentAtLength || function(fractionLength) {
+    svgProto.getTangentAtLength = function(fractionLength) {
         var d = this.getAttribute('d');
         if (d) {
             try {
